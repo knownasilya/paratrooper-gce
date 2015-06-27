@@ -1,0 +1,35 @@
+{
+  "metadata": {
+    "name": "controller-name",
+    "labels": {
+      "name": "{{controllerName}}"
+    }
+  },
+  "kind": "ReplicationController",
+  "apiVersion": "v1beta3",
+  "spec": {
+    "replicas": {{replicas}},
+    "selector": {"name": "frontend"},
+    "template": {
+      "metadata":{
+        "labels": {
+          "name": "frontend"
+        }
+      },
+      "spec": {
+        "containers": [{
+          "name": "{{containerName}}",
+          "image": "{{containerTag}}",
+          "ports": [{
+            "containerPort": {{ports.default}},
+            "hostPort": 80
+          },{
+            "containerPort": {{ports.ssl}},
+            "hostPort": 443
+          }],
+          "env": []
+        }]
+      }
+    }
+  }
+}
