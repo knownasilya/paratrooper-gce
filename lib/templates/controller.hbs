@@ -23,10 +23,10 @@
           "ports": [{
             "containerPort": {{ports.default}},
             "hostPort": 80
-          },{
+          }{{#if ports.ssl}}, {
             "containerPort": {{ports.ssl}},
             "hostPort": 443
-          }],
+          }{{/if}}],
           "env": {{{envVars}}}
         }]
       }
