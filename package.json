@@ -1,5 +1,5 @@
 {
-  "name": "paratrooper-gce",
+  "name": "paratrooper-gke",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
